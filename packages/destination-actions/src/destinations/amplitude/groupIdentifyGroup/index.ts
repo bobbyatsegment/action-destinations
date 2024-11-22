@@ -10,21 +10,6 @@ const action: ActionDefinition<Settings, Payload> = {
     'Set or update properties of particular groups. Only for use with reverse ETL.',
   defaultSubscription: 'type = "group"',
   fields: {
-    insert_id: {
-      label: 'Insert ID',
-      type: 'string',
-      description:
-        'Amplitude will deduplicate subsequent events sent with this ID we have already seen before within the past 7 days. Amplitude recommends generating a UUID or using some combination of device ID, user ID, event type, event ID, and time.'
-    },
-    time: {
-      label: 'Timestamp',
-      type: 'string',
-      description:
-        'The timestamp of the event. If time is not sent with the event, it will be set to the request upload time.',
-      default: {
-        '@path': '$.timestamp'
-      }
-    },
     group_properties: {
       label: 'Group Properties',
       type: 'object',
